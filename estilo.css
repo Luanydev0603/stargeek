@@ -53,6 +53,7 @@ footer{
 .mainimg > img{
     width: 300px;
 }
+
 .titulo {
     display: flex;
     justify-content: center;
