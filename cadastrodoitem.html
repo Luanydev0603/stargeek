@@ -16,16 +16,19 @@
 
         <main>
             <form action="">
-                <input id="ifoto" name="txtfoto" placeholder="  Escolha uma foto"type="text">
+
                 <label for="">Nome do Item</label>
-                <input type="text">
+                <input type="text" id="nome" class="nome" >
                 <label for="">Resumo</label>
-                <input type="text">
+                <textarea id="descricao" class="descricao" cols="30" rows="5"></textarea>
+                <label>Foto</label>
+                <input type="file" name="foto" id="foto">
+                <button id="btn">Cadastrar Item</button>
 
             </form>
 
         </main>
 
-    
+    <script src="cadastrodoitem.js"></script>
 </body>
 </html>
