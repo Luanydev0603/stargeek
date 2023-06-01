@@ -77,6 +77,10 @@ main > a{
 
 }
 
+.cardimagem img{
+    width: 200px;
+    height: 300px;
+}
 
 /* Cadastro do Item */
 

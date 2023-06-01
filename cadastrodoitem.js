@@ -7,6 +7,9 @@ var url = new URL(window.location.href);
 var peditar = url.searchParams.get("peditar");
 var pindice = url.searchParams.get("indice");
 
+var emaillogado;
+femailLogado();
+
 if (peditar == "true"){
     editar(pindice);
   }
@@ -23,7 +26,8 @@ botao.onclick = (evento) =>{
                             {
                             nome: nome.value,
                             descricao: descricao.value,
-                            foto: nomeArq
+                            foto: nomeArq,
+                            email : emaillogado
                             }
                             )
                 localStorage.setItem("catalogo", JSON.stringify(dados));
@@ -104,6 +108,17 @@ function salvaEdicao(pfoto){
     dados[pindice].nome = nome.value;
     dados[pindice].descricao = descricao.value;
     dados[pindice].foto = pfoto;
+    dados[pindice].email = emaillogado;
     localStorage.setItem("catalogo", JSON.stringify(dados));
-  window.localStorage.assign("catalogo.html")
+    window.location.assign("catalogo.html")
+ 
   }
+
+function femailLogado(){
+    let dados = sessionStorage.getItem("logado");
+    if (dados == null){
+        window.location.assign("login.html");
+    } else{
+        emaillogado = dados;
+    }
+}

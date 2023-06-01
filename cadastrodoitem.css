@@ -51,17 +51,20 @@ form > label{
 }
 
 
-form > input  {
-    font-size: 2rem;
+form > input, form > textarea  {
+    font-size: 1.2rem;
     background-color: #D9D9D9;
-    border-radius: 30px ;
-    width: 694px;
-    height: 158px;
+    border-radius: 30px;
     font-weight: 400;
-    font-size: 48px;
-    line-height: 62px;
-    padding-left: 105px;
+    padding: 10px;
 }
+
+form > button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
 
 
 form > label{

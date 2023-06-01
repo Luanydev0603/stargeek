@@ -1,10 +1,11 @@
 const cards = document.querySelector(".cards");
-const botaomodal = document.querySelectorById("btn");
 const formulario = document.getElementById("formulario");
 const nome = document.getElementById("nome");
 const descricao = document.getElementById("descricao");
 const foto = document.getElementById("foto");
 
+var emaillogado;
+femailLogado();
 
 carregarCatalogo();
 function carregarCatalogo(){
@@ -17,6 +18,7 @@ function carregarCatalogo(){
     }
 
     dados.forEach((elemento, indice) => {
+        if(elemento.email == emaillogado){
         let divcard = document.createElement("div");
         divcard.setAttribute("class", "card");
         divcard.innerHTML = `
@@ -28,7 +30,7 @@ function carregarCatalogo(){
         </div>
         </div>`;
         
-        cards.appendChild(divcard);
+        cards.appendChild(divcard);}
         
     });
 }
@@ -47,4 +49,13 @@ function excluir(indice){
     localStorage.setItem("catalogo", JSON.stringify(dados));
     }
     window.location.reload();
+}
+
+function femailLogado(){
+    let dados = sessionStorage.getItem("logado");
+    if (dados == null){
+        window.location.assign("login.html");
+    } else{
+        emaillogado = dados;
+    }
 }
